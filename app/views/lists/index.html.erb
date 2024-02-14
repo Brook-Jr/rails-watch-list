@@ -1,0 +1,10 @@
+<%= render "lists/navbar", lists: @lists %>
+
+<div class="container mt-5">
+  <h2>My Lists</h2>
+  <ul class="list-group">
+    <% @lists.each do |list| %>
+      <li class="list-group-item"><%= link_to list.name, list_path(list), class: "text-decoration-none" %></li>
+    <% end %>
+  </ul>
+</div>

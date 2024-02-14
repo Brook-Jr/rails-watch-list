@@ -1,0 +1,8 @@
+<%= render "lists/navbar", lists: @lists %>
+
+<div class="container mt-5">
+  <%= simple_form_for @list do |f| %>
+    <%= f.input :name %>
+    <%= f.button :submit, class: "btn btn-success" %>
+  <% end %>
+</div>
