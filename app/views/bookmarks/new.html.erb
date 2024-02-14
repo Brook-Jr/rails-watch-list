@@ -1,0 +1,10 @@
+<%= render "lists/navbar", lists: @lists %>
+
+<div class="container mt-5">
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.association :movie %>
+    <%= f.input :comment %>
+    <%= f.submit "Add Movie", class: "btn btn-success" %>
+    <%= link_to "Return", list_path(@list), class: "btn btn-outline-secondary" %>
+  <% end %>
+</div>
