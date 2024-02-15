@@ -8,7 +8,11 @@
   <% else %>
     <ul>
       <% @list.bookmarks.each do |bookmark| %>
-        <li><strong><%= bookmark.movie.title %></strong> - <em><%= bookmark.comment %></em></li>
+        <li>
+          <strong><%= bookmark.movie.title %></strong> - <em><%= bookmark.comment %></em>
+          <%= link_to "Delete", bookmark_path(bookmark),
+          data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-outline-danger btn-sm" %>
+        </li>
       <% end %>
     </ul>
   <% end %>
